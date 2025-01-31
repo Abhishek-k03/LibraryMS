@@ -1,0 +1,116 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Full height homepage container */
+.homepage {
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Makes sure content is positioned above background */
+}
+
+/* Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 20px;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  color: white;
+  z-index: 1000; /* Ensure navbar stays on top */
+}
+
+/* Background Image Div */
+.background-image {
+  position: absolute;
+  top: 2px; /* Adjust based on your navbar height */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../assets/libbgimg2.jpeg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px); /* Apply blur to the background only */
+  z-index: -1; /* Place behind the content */
+}
+
+.hero-section {
+  flex: 1; /* Fill remaining space */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+/* Welcome Message */
+.welcome-message {
+  font-family: "Goudy Old Style";
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+  z-index: 1; /* Keep the text above the blurred background */
+  position: relative; /* Ensure the message stays above */
+}
+
+/* Search Bar Container */
+.search-bar-container {
+  margin-bottom: 10px;
+  z-index: 1; /* Keep search bar above the blurred background */
+}
+
+/* Search Bar Styling */
+.search-bar {
+  padding: 10px;
+  font-size: 1rem;
+  width: 250px;
+  border-radius: 5px;
+  border: none;
+  z-index: 1; /* Keep the search bar above the blurred background */
+}
+
+/* Explore Books Button */
+.explore-books-btn-container {
+  margin-top: 10px;
+  z-index: 1; /* Keep button above the blurred background */
+}
+
+.explore-books-btn {
+  padding: 10px 10px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.explore-books-btn:hover {
+  background-color: #0056b3;
+}
+
+.custom-card {
+  background-color: rgba(255, 255, 255, 0.5); /* Slight transparency */
+  min-height: 300px;
+  border-radius: 10px; /* Optional: rounded corners */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Ensures content is centered inside */
+  align-items: center;
+  flex-grow: 1;
+}
+
+/* Custom Divider */
+.custom-divider {
+  width: 2px;
+  height: 300px; /* Adjust height relative to the cards */
+  background-color: rgba(255, 255, 255, 1); /* Semi-transparent black */
+  position: relative;
+}

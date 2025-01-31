@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Book</title>
+    <script>
+        document.querySelector("form").addEventListener("submit", function (event) {
+            event.preventDefault();
+            let formData = new FormData(this);
+
+            fetch("/add_book", {
+                method: "POST",
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message);
+                    this.reset();
+                });
+        });
+    </script>
+</head>
+
+<body>
+    <h2>Add a New Book</h2>
+    <form action="/add_book" method="POST">
+        <label>Book ID:</label>
+        <input type="text" name="bookid" required><br>
+
+        <label>Name:</label>
+        <input type="text" name="name" required><br>
+
+        <label>Counts:</label>
+        <input type="number" name="counts" required><br>
+
+        <label>Author:</label>
+        <input type="text" name="author" required><br>
+
+        <button type="submit">Add Book</button>
+    </form>
+</body>
+
+</html>
